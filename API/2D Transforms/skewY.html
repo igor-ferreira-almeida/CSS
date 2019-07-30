@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Square</title>
+
+	<style>
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		main {
+			padding: 2em;
+		}
+
+		#execute-example {
+			display: inline-block;
+			margin: 1em 0;
+		}
+
+		.container {
+			margin: 0 auto;
+			width: 1000px;
+		}
+
+		.route {
+			border: 0.2em solid #888;
+			display: flex;
+			height: 70px;
+			width: 75px;
+		}
+
+		.square {
+			background-color: #F00;
+			width: 70px;
+			text-indent: -9999px;
+			transition: 3s transform;
+		}
+		.square.active {
+			transform: skewY(45deg);
+		}
+
+	</style>
+
+
+</head>
+<body>
+	<main>
+		<div class="container">
+			<a id="execute-example" href="#">skewY(45deg)</a>
+
+			<section class="route">
+				<div id="square" class="square" href="#">square</div>
+			</section>
+			
+		</div>
+	</main>
+
+	<script type="text/javascript">
+		let linkExecuteExample = document.querySelector('#execute-example');
+		let square = document.querySelector('#square');
+		
+		linkExecuteExample.addEventListener('click', function() {
+			if(square.classList.contains('active')) {
+				square.classList.remove('active');
+			} else {
+				square.classList.add('active');
+			}
+		});
+	</script>
+</body>
+</html>
